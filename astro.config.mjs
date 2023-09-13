@@ -10,5 +10,5 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   outDir: 'public',
   publicDir: 'static',
-  base: '/geor-ecommerce-docs',
+//   base: '/geor-ecommerce-docs',
 });

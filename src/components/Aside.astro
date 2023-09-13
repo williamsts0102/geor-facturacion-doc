@@ -1,7 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Logo from '/src/images/logo.svg'
+---
+
 <aside>
+	<div class="logo">
+		<Image src={Logo} alt="Logo" class="img-fluid" />
+	</div>
 	<ul>
 		<li>
-			<a href="#">Listado de países</a>
+			<a href="/countries">Países</a>
 		</li>
 	</ul>
 </aside>
+
+<style>
+	aside{
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 200px;
+		box-shadow: 0 0 20px rgba(0,0,0,.1);
+		background-color: white;
+	}
+	.logo{
+		padding: 1rem;
+		text-align: center;
+	}
+	aside ul{
+		margin: 0;
+		padding: 0 0 0 10px;
+	}
+	aside li{
+		list-style: none;
+	}
+	aside li a{
+		font-size: 14px;
+		text-decoration: none;
+		font-weight: 500;
+	}
+</style>
