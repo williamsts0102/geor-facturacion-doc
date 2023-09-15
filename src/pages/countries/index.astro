@@ -56,38 +56,218 @@ import MainLayout from '../../layouts/MainLayout.astro';
 	</p>
 	<pre>
 		{ JSON.stringify({
-			"data": [
-				{
-					"id": "CV",
-					"description": "CAPE VERDE",
-					"flag": "http://pasion.georfacturacion.test/images/cv.svg"
-				},
-				{
-					"id": "GP",
-					"description": "GUADELOUPE",
-					"flag": "http://pasion.georfacturacion.test/images/gp.svg"
-				},
-				{
-					"id": "KP",
-					"description": "KOREA, DEMOCRATIC PEOPLE`S REPUBLIC OF",
-					"flag": "http://pasion.georfacturacion.test/images/kp.svg"
-				},
-				{
-					"id": "LA",
-					"description": "LAO PEOPLE`S DEMOCRATIC REPUBLIC",
-					"flag": "http://pasion.georfacturacion.test/images/la.svg"
-				},
-				{
-					"id": "PE",
-					"description": "PERU",
-					"flag": "http://pasion.georfacturacion.test/images/pe.svg"
-				},
-				{
-					"id": "ST",
-					"description": "SAO TOME AND PRINCIPE",
-					"flag": "http://pasion.georfacturacion.test/images/st.svg"
-				}
-			]
-		}, null, 2)}
+    "data": [
+        {
+            "id": "AR",
+            "description": "ARGENTINA",
+            "default": false,
+            "code": "+54",
+            "mask": "9 99 9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/ar.svg"
+        },
+        {
+            "id": "BO",
+            "description": "BOLIVIA",
+            "default": false,
+            "code": "+591",
+            "mask": "9 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/bo.svg"
+        },
+        {
+            "id": "BR",
+            "description": "BRAZIL",
+            "default": false,
+            "code": "+55",
+            "mask": "99 99999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/br.svg"
+        },
+        {
+            "id": "CL",
+            "description": "CHILE",
+            "default": false,
+            "code": "+56",
+            "mask": "999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/cl.svg"
+        },
+        {
+            "id": "CO",
+            "description": "COLOMBIA",
+            "default": false,
+            "code": "+57",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/co.svg"
+        },
+        {
+            "id": "CR",
+            "description": "COSTA RICA",
+            "default": false,
+            "code": "+506",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/cr.svg"
+        },
+        {
+            "id": "CU",
+            "description": "CUBA",
+            "default": false,
+            "code": "+53",
+            "mask": "999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/cu.svg"
+        },
+        {
+            "id": "DO",
+            "description": "DOMINICAN REPUBLIC",
+            "default": false,
+            "code": "+1",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/do.svg"
+        },
+        {
+            "id": "EC",
+            "description": "ECUADOR",
+            "default": false,
+            "code": "+593",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/ec.svg"
+        },
+        {
+            "id": "SV",
+            "description": "EL SALVADOR",
+            "default": false,
+            "code": "+503",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/sv.svg"
+        },
+        {
+            "id": "GD",
+            "description": "GRENADA",
+            "default": false,
+            "code": "+1",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/gd.svg"
+        },
+        {
+            "id": "GT",
+            "description": "GUATEMALA",
+            "default": false,
+            "code": "+502",
+            "mask": "5999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/gt.svg"
+        },
+        {
+            "id": "GY",
+            "description": "GUYANA",
+            "default": false,
+            "code": "+592",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/gy.svg"
+        },
+        {
+            "id": "HT",
+            "description": "HAITI",
+            "default": false,
+            "code": "+509",
+            "mask": "99 99 9999",
+            "flag": "http://pasion.georfacturacion.test/images/ht.svg"
+        },
+        {
+            "id": "HN",
+            "description": "HONDURAS",
+            "default": false,
+            "code": "+504",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/hn.svg"
+        },
+        {
+            "id": "JM",
+            "description": "JAMAICA",
+            "default": false,
+            "code": "+1",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/jm.svg"
+        },
+        {
+            "id": "MX",
+            "description": "MEXICO",
+            "default": false,
+            "code": "+52",
+            "mask": "99 9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/mx.svg"
+        },
+        {
+            "id": "NI",
+            "description": "NICARAGUA",
+            "default": false,
+            "code": "+505",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/ni.svg"
+        },
+        {
+            "id": "PA",
+            "description": "PANAMA",
+            "default": false,
+            "code": "+507",
+            "mask": "9999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/pa.svg"
+        },
+        {
+            "id": "PY",
+            "description": "PARAGUAY",
+            "default": false,
+            "code": "+595",
+            "mask": "9999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/py.svg"
+        },
+        {
+            "id": "PE",
+            "description": "PERU",
+            "default": true,
+            "code": "+51",
+            "mask": "999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/pe.svg"
+        },
+        {
+            "id": "PT",
+            "description": "PORTUGAL",
+            "default": false,
+            "code": "+351",
+            "mask": "999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/pt.svg"
+        },
+        {
+            "id": "PR",
+            "description": "PUERTO RICO",
+            "default": false,
+            "code": "+1",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/pr.svg"
+        },
+        {
+            "id": "SR",
+            "description": "SURINAME",
+            "default": false,
+            "code": "+597",
+            "mask": "8999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/sr.svg"
+        },
+        {
+            "id": "UY",
+            "description": "URUGUAY",
+            "default": false,
+            "code": "+598",
+            "mask": "999 999 999",
+            "flag": "http://pasion.georfacturacion.test/images/uy.svg"
+        },
+        {
+            "id": "VE",
+            "description": "VENEZUELA",
+            "default": false,
+            "code": "+58",
+            "mask": "999 999 9999",
+            "flag": "http://pasion.georfacturacion.test/images/ve.svg"
+        }
+    ],
+    "success": true,
+    "message": "Listado de paises disponibles mostrados de forma correcta."
+}, null, 2)}
 	</pre>
 </MainLayout>
