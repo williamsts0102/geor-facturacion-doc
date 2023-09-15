@@ -3,25 +3,91 @@ import MainLayout from '../../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Geor Ecommerce - Paises">
-  <h3>Paises</h3>
-  <hr>
-  <h4>Listado de paises</h4>
-  <ul>
-	<li>
+	<h5>Paises</h5>
+	<hr />
+	<h6>Listado de paises</h6>
+	<p>
+		<strong>Descripción: </strong>Ver todo el listado de paises activos
+		registrados en la base de datos
+	</p>
+	<p>
 		<strong>URL: </strong>
-		<a href="#">Demo.com</a>
-	</li>
-	<li>
-		<strong>Método: </strong>POST
-	</li>
-	<li>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/countries</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
 		<strong>Request: </strong>
-		<br>
-		<pre>{ JSON.stringify({
-    "type": "EMAIL",
-    "email": "joel201087@gmail.com",
-    "password": "nolose"
-}, null, 2)}</pre>
-	</li>
-  </ul>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "id": "",
+    "description": "PE"
+}, null, 2)
+		}
+	</pre>
+	<p><strong>Tabla de referencias</strong></p>
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>id</td>
+				<td>Código del país</td>
+				<td>Cadena</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>description</td>
+				<td>Nombre o descripción del país</td>
+				<td>Cadena</td>
+				<td>No</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+			"data": [
+				{
+					"id": "CV",
+					"description": "CAPE VERDE",
+					"flag": "http://pasion.georfacturacion.test/images/cv.svg"
+				},
+				{
+					"id": "GP",
+					"description": "GUADELOUPE",
+					"flag": "http://pasion.georfacturacion.test/images/gp.svg"
+				},
+				{
+					"id": "KP",
+					"description": "KOREA, DEMOCRATIC PEOPLE`S REPUBLIC OF",
+					"flag": "http://pasion.georfacturacion.test/images/kp.svg"
+				},
+				{
+					"id": "LA",
+					"description": "LAO PEOPLE`S DEMOCRATIC REPUBLIC",
+					"flag": "http://pasion.georfacturacion.test/images/la.svg"
+				},
+				{
+					"id": "PE",
+					"description": "PERU",
+					"flag": "http://pasion.georfacturacion.test/images/pe.svg"
+				},
+				{
+					"id": "ST",
+					"description": "SAO TOME AND PRINCIPE",
+					"flag": "http://pasion.georfacturacion.test/images/st.svg"
+				}
+			]
+		}, null, 2)}
+	</pre>
 </MainLayout>
