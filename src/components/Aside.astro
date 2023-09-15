@@ -7,9 +7,12 @@ import Logo from '/src/images/logo.svg'
 	<div class="logo">
 		<Image src={Logo} alt="Logo" class="img-fluid" />
 	</div>
-	<ul>
+	<ul class="menu-vertical">
 		<li>
 			<a href="/countries">Países</a>
+		</li>
+		<li>
+			<a href="/langs">Idiomas</a>
 		</li>
 	</ul>
 </aside>
@@ -38,6 +41,12 @@ import Logo from '/src/images/logo.svg'
 	aside li a{
 		font-size: 14px;
 		text-decoration: none;
-		font-weight: 500;
+	}
+	.menu-vertical a {
+		font-weight: 400;
+		line-height: 1;
+	}
+	.menu-vertical li{
+		padding: .25rem 0;
 	}
 </style>

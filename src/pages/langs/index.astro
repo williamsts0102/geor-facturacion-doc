@@ -1,0 +1,36 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+	<h5>Idiomas</h5>
+	<hr />
+	<h6>Listado de idiomas</h6>
+	<p>
+		<strong>Descripción: </strong>Ver todo el listado de idiomas disponibles para la tienda
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/langs</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "data": [
+        {
+            "id": "es",
+            "description": "Español"
+        },
+        {
+            "id": "en",
+            "description": "Ingles"
+        }
+    ],
+    "success": true,
+    "message": "Listado de idiomas mostrados de forma correcta."
+}, null, 2)}
+	</pre>
+</MainLayout>
