@@ -1,0 +1,62 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+	<h5>Recuperar contraseña</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Sección donde se muestran los endpoints necesarios para que el usuario recupere su contraseña
+	</p>
+	<br>
+	<h6>Enviar código de verificación al correo electrónico del usuario</h6>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/reset-password/send-code</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "email": "liz@gmail.com"
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "Se ha enviado un código de verificación al correo electrónico ingresado, reviselo y siga las instrucciones."
+}, null, 2)}
+	</pre>
+	<br><br>
+	<h6>Cambiar la contraseña</h6>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/reset-password/change-password</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "email": "liz@gmail.com",
+    "code": "622391",
+    "password": "Demo#123",
+    "password_confirmation": "Demo#123"
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "La contraseña ha sido restablecida de forma correcta."
+}, null, 2)}
+	</pre>
+</MainLayout>
