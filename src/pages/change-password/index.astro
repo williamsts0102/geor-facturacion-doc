@@ -1,0 +1,36 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Cambiar mi contraseña">
+	<h5>Cambiar mi contraseña</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Endpoint para cambiar mi contraseña actual
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/users/change-password</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p><strong>Requiere: </strong>Autenticación | Validación de cuenta</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "current_password": "nolose",
+    "password": "123456",
+    "password_confirmation": "123456"
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "Contraseña del usuario actualizada de forma correcta."
+}, null, 2)}
+	</pre>
+</MainLayout>
