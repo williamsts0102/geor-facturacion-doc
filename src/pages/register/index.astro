@@ -22,7 +22,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
     "name": "Juan Yoel Cerna Torres",
     "email": "joel201087@gmail.com",
     "phone": "978846767",
-    "password": "123456"
+    "password": "123456",
+	"country_id": "PE"
 }, null, 2)
 		}
 	</pre>
@@ -65,6 +66,13 @@ import MainLayout from '../../layouts/MainLayout.astro';
 				<td>Cadena</td>
 				<td>Mínimo 6 caracteres, máximo 50 caracteres</td>
 				<td>Si</td>
+			</tr>
+			<tr>
+				<td>country_id</td>
+				<td>Código ISO del país</td>
+				<td>Cadena</td>
+				<td>El código debe existir dentro de la tabla de países disponibles del sistema</td>
+				<td>No</td>
 			</tr>
 		</tbody>
 	</table>
