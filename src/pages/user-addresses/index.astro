@@ -1,0 +1,261 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+	<h5>CRUD de direcciones de usuario</h5>
+    <p>
+    Se requiere autenticación y validacion para acceder a estas API.
+    Asegúrese de proporcionar las credenciales adecuadas.
+    </p>
+
+	<hr/>
+
+    <h6>Registrar la dirección</h6>
+	<p>
+		<strong>Descripción: </strong>Endpoint para registrar la dirección del usuario
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/addresses/register</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+
+	<p>
+  <strong>Request: </strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify({
+    "description":"Tienda",
+    "contry_id":"PE",
+    "department_id":"03",
+    "province_id":"0101",
+    "district_id":"010101",
+    "address":"sjl. campoy",
+    "postal_code":"14",
+    "default":true
+}   , null, 2)
+    }
+    </pre>
+    <p>
+    <strong>Tabla de referencias</strong>
+    </p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Validación</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>description</td>
+				<td>Nombre o descripción de la dirección</td>
+				<td>String</td>
+				<td>Máximo 100 caracteres </td>
+				<td>Si</td>
+			</tr>
+			<tr>
+				<td>contry_id</td>
+				<td>Identificador del país</td>
+				<td>Char</td>
+				<td>Máximo 2 digitos</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>department_id</td>
+				<td>Identificador del departamento</td>
+				<td>Char</td>
+				<td>Máximo 2 </td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>province_id</td>
+				<td>Identificador de provincia</td>
+				<td>Char</td>
+				<td>Máximo 4</td>
+				<td>No</tdódigo d>
+			</tr>
+            <tr>
+				<td>district_id</td>
+				<td>Identificador de distrito</td>
+				<td>Char</td>
+				<td>Máximo 6</td>
+				<td>No</tdódigo d>
+			</tr>
+            <tr>
+				<td>address</td>
+				<td>Dirección del comprador</td>
+				<td>String</td>
+				<td>Máximo 250</td>
+				<td>Si</tdódigo d>
+			</tr>
+            <tr>
+				<td>postal_code</td>
+				<td>Código postal</td>
+				<td>String</td>
+				<td>Máximo 15</td>
+				<td>No</tdódigo d>
+			</tr>
+            <tr>
+				<td>default</td>
+				<td>Valor que indica si la dirección es la predeterminada</td>
+				<td>bool</td>
+				<td>Máximo 1</td>
+				<td>Si</tdódigo d>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "data": {
+        "description": "test24",
+        "contry_id": "PE",
+        "department_id": "03",
+        "province_id": "0101",
+        "district_id": "010101",
+        "postal_code": "14",
+        "default": true
+    },
+    "success": true,
+    "message": "Tipo de documento creado de forma correcta.",
+    }, null, 2)}
+    </pre>
+
+     <h6>Listado de dirección</h6>
+	<p>
+		<strong>Descripción: </strong>Endpoint para ver todo el listado de las direcciones
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/addresses</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+    <strong>Request: </strong>
+    </p>
+    <pre>
+    No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+		<strong>Respuesta</strong>
+	</p>
+
+	<pre>
+		{ JSON.stringify({
+        "data": [
+        {
+            "id": 1,
+            "description": "test24",
+            "contry": "PE",
+            "department": "APURIMAC",
+            "province": "Chachapoyas",
+            "district": "Chachapoyas",
+            "postal_code": "14",
+            "default": 0
+        },
+        {
+            "id": 2,
+            "description": "test28",
+            "contry": "PE",
+            "department": "APURIMAC",
+            "province": "Chachapoyas",
+            "district": "Chachapoyas",
+            "postal_code": "14",
+            "default": 0
+        },
+        {
+            "id": 3,
+            "description": "test29",
+            "contry": "PE",
+            "department": "APURIMAC",
+            "province": "Condorcanqui",
+            "district": "Asunción",
+            "postal_code": "333",
+            "default": 0
+        }],
+    "success": true,
+    "message": "Listado de tipo de direcciones mostrados de forma correcta."
+    }, null, 2)}
+    </pre>
+
+    <h6>Actualizar dirección </h6>
+	<p>
+		<strong>Descripción: </strong>Endpoint actualiza la dirección del usuario
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/addresses/update/[Identificador]</span>
+	</p>
+	<p><strong>Método: </strong>PUT</p>
+
+	<p>
+  <strong>Request: </strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify({
+    "description":"Tienda",
+    "contry_id":"PE",
+    "department_id":"03",
+    "province_id":"0101",
+    "district_id":"010101",
+    "address":"sjl. campoy",
+    "postal_code":"14",
+    "default":true
+}   , null, 2)
+    }
+    </pre>
+	<p>
+	<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({"data": {
+        "description": "Tienda",
+        "contry_id": "PE",
+        "department_id": "03",
+        "province_id": "0101",
+        "district_id": "010101",
+        "postal_code": "333",
+        "default": true
+    },
+    "success": true,
+    "message": "El tipo de documento seleccionado fue actualizado de forma correcta.",
+    }, null, 2)}
+    </pre>
+
+    <h6>Eliminar dirección de usuario</h6>
+	<p>
+		<strong>Descripción: </strong>Endpoint elimina la dirección del usuario
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/addresses/delete/[Identificador]</span>
+	</p>
+	<p><strong>Método: </strong>DELETE</p>
+
+	<p>
+    <strong>Request: </strong>
+   </p>
+    <pre>
+    No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+    
+	<strong>Respuesta</strong>
+	</p>
+	<pre>
+	{ JSON.stringify({
+   "success": true,
+    "message": "Información procesada con éxito",
+    }, null, 2)}
+    </pre>
+</MainLayout>
