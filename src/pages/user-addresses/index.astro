@@ -27,15 +27,29 @@ import MainLayout from '../../layouts/MainLayout.astro';
     <pre>
     {
     JSON.stringify({
-    "description":"Tienda",
-    "country_id":"PE",
-    "department_id":"03",
-    "province_id":"0101",
-    "district_id":"010101",
-    "address":"sjl. campoy",
-    "postal_code":"14",
-    "default":true
-}   , null, 2)
+		"description": "Tienda",
+		"country_id": "PE",
+		"address": "sjl. campoy",
+		"extra": [
+			{
+				"national_division": "Departamento",
+				"value": "Lima",
+				"ubigeo": "10"
+			},
+			{
+				"national_division": "Provincia",
+				"value": "Barranca",
+				"ubigeo": "1001"
+			},
+			{
+				"national_division": "Distrito",
+				"value": "Pativilca",
+				"ubigeo": "100101"
+			}
+		],
+		"postal_code": "14",
+		"default": true
+		}, null, 2)
     }
     </pre>
     <p>
@@ -67,26 +81,12 @@ import MainLayout from '../../layouts/MainLayout.astro';
 				<td>Máximo 2 digitos</td>
 				<td>No</td>
 			</tr>
-			<tr>
-				<td>department_id</td>
-				<td>Identificador del departamento</td>
-				<td>Char</td>
-				<td>Máximo 2 digitos</td>
-				<td>No</td>
-			</tr>
-			<tr>
-				<td>province_id</td>
-				<td>Identificador de provincia</td>
-				<td>Char</td>
-				<td>Máximo 4 digitos</td>
-				<td>No</tdódigo d>
-			</tr>
             <tr>
-				<td>district_id</td>
-				<td>Identificador de distrito</td>
-				<td>Char</td>
-				<td>Máximo 6 digitos</td>
-				<td>No</tdódigo d>
+				<td>extra</td>
+				<td>Datos sobre la división nacional del país seleccionado</td>
+				<td>Array</td>
+				<td>El formato del array de objetos se declara en el request</td>
+				<td>Si</tdódigo d>
 			</tr>
             <tr>
 				<td>address</td>
@@ -116,18 +116,33 @@ import MainLayout from '../../layouts/MainLayout.astro';
 	</p>
 	<pre>
 		{ JSON.stringify({
-    "data": {
-        "description": "test24",
-        "country_id": "PE",
-        "department_id": "03",
-        "province_id": "0101",
-        "district_id": "010101",
-        "postal_code": "14",
-        "default": true
-    },
-    "success": true,
-    "message": "Tipo de documento creado de forma correcta.",
-    }, null, 2)}
+			"data": {
+				"id": 4,
+				"description": "Tienda",
+				"country": "PE",
+				"extra": [
+					{
+						"national_division": "Departamento",
+						"value": "Lima",
+						"ubigeo": "10"
+					},
+					{
+						"national_division": "Provincia",
+						"value": "Barranca",
+						"ubigeo": "1001"
+					},
+					{
+						"national_division": "Distrito",
+						"value": "Pativilca",
+						"ubigeo": "100101"
+					}
+				],
+				"postal_code": "14",
+				"default": true
+			},
+			"success": true,
+			"message": "Tipo de documento creado de forma correcta."
+		}, null, 2)}
     </pre>
 
      <h6>Listado de dirección</h6>
@@ -152,36 +167,31 @@ import MainLayout from '../../layouts/MainLayout.astro';
 	<pre>
 		{ JSON.stringify({
         "data": [
-        {
-            "id": 1,
-            "description": "test24",
+			{
+            "id": 4,
+            "description": "Tienda",
             "country": "PE",
-            "department": "APURIMAC",
-            "province": "Chachapoyas",
-            "district": "Chachapoyas",
+            "extra": [
+                {
+                    "value": "Lima",
+                    "ubigeo": "10",
+                    "national_division": "Departamento"
+                },
+                {
+                    "value": "Barranca",
+                    "ubigeo": "1001",
+                    "national_division": "Provincia"
+                },
+                {
+                    "value": "Pativilca",
+                    "ubigeo": "100101",
+                    "national_division": "Distrito"
+                }
+            ],
             "postal_code": "14",
-            "default": 0
-        },
-        {
-            "id": 2,
-            "description": "test28",
-            "country": "PE",
-            "department": "APURIMAC",
-            "province": "Chachapoyas",
-            "district": "Chachapoyas",
-            "postal_code": "14",
-            "default": 0
-        },
-        {
-            "id": 3,
-            "description": "test29",
-            "country": "PE",
-            "department": "APURIMAC",
-            "province": "Condorcanqui",
-            "district": "Asunción",
-            "postal_code": "333",
-            "default": 0
-        }],
+            "default": 1
+        }
+		],
     "success": true,
     "message": "Listado de tipo de direcciones mostrados de forma correcta."
     }, null, 2)}
@@ -202,34 +212,65 @@ import MainLayout from '../../layouts/MainLayout.astro';
     </p>
     <pre>
     {
-    JSON.stringify({
-    "description":"Tienda",
-    "country_id":"PE",
-    "department_id":"03",
-    "province_id":"0101",
-    "district_id":"010101",
-    "address":"sjl. campoy",
-    "postal_code":"14",
-    "default":true
-}   , null, 2)
+    JSON.stringify(    {
+  "description": "Dirección principal",
+  "country_id": "PE",
+  "address": "Calle Siempre viva #456",
+  "extra": [
+      {
+          "national_division": "Departamento",
+          "value": "Lima",
+          "ubigeo": "10"
+      },
+      {
+          "national_division": "Provincia",
+          "value": "Barranca",
+          "ubigeo": "1001"
+      },
+      {
+          "national_division": "Distrito",
+          "value": "Pativilca",
+          "ubigeo": "100101"
+      }
+  ],
+  "postal_code": "14",
+  "default": true
+}, null, 2)
     }
     </pre>
 	<p>
 	<strong>Respuesta</strong>
 	</p>
 	<pre>
-		{ JSON.stringify({"data": {
-        "description": "Tienda",
-        "country_id": "PE",
-        "department_id": "03",
-        "province_id": "0101",
-        "district_id": "010101",
-        "postal_code": "333",
+		{ JSON.stringify({
+    "data": {
+        "id": 4,
+        "description": "Dirección principal",
+        "address": "Calle Siempre viva #456",
+        "country": "PE",
+        "extra": [
+            {
+                "national_division": "Departamento",
+                "value": "Lima",
+                "ubigeo": "10"
+            },
+            {
+                "national_division": "Provincia",
+                "value": "Barranca",
+                "ubigeo": "1001"
+            },
+            {
+                "national_division": "Distrito",
+                "value": "Pativilca",
+                "ubigeo": "100101"
+            }
+        ],
+        "postal_code": "14",
         "default": true
     },
     "success": true,
-    "message": "El tipo de documento seleccionado fue actualizado de forma correcta.",
-    }, null, 2)}
+    "message": "El tipo de documento seleccionado fue actualizado de forma correcta."
+}, null, 2)}
     </pre>
 
     <h6>Eliminar dirección de usuario</h6>

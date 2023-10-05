@@ -59,211 +59,332 @@ import MainLayout from '../../layouts/MainLayout.astro';
     "data": [
         {
             "id": "AR",
-            "description": "ARGENTINA",
+            "description": "Argentina",
             "default": false,
             "code": "+54",
             "mask": "9 99 9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/ar.svg"
+            "flag": "http://pasion.georfacturacion.test/images/ar.svg",
+            "national_division": [
+                "Provincia",
+                "Departamento o Comuna",
+                "Municipio"
+            ]
         },
         {
             "id": "BO",
-            "description": "BOLIVIA",
+            "description": "Bolivia",
             "default": false,
             "code": "+591",
             "mask": "9 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/bo.svg"
+            "flag": "http://pasion.georfacturacion.test/images/bo.svg",
+            "national_division": [
+                "Departamento",
+                "Provincia",
+                "Municipio"
+            ]
         },
         {
             "id": "BR",
-            "description": "BRAZIL",
+            "description": "Brazil",
             "default": false,
             "code": "+55",
             "mask": "99 99999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/br.svg"
+            "flag": "http://pasion.georfacturacion.test/images/br.svg",
+            "national_division": [
+                "Estado",
+                "Municipio",
+                "Distrito"
+            ]
         },
         {
             "id": "CL",
-            "description": "CHILE",
+            "description": "Chile",
             "default": false,
             "code": "+56",
             "mask": "999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/cl.svg"
+            "flag": "http://pasion.georfacturacion.test/images/cl.svg",
+            "national_division": [
+                "Region",
+                "Provincia",
+                "Comuna"
+            ]
         },
         {
             "id": "CO",
-            "description": "COLOMBIA",
+            "description": "Colombia",
             "default": false,
             "code": "+57",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/co.svg"
+            "flag": "http://pasion.georfacturacion.test/images/co.svg",
+            "national_division": [
+                "Departamento",
+                "Municipio"
+            ]
         },
         {
             "id": "CR",
-            "description": "COSTA RICA",
+            "description": "Costa Rica",
             "default": false,
             "code": "+506",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/cr.svg"
+            "flag": "http://pasion.georfacturacion.test/images/cr.svg",
+            "national_division": [
+                "Provincia",
+                "Cantone",
+                "Distrito"
+            ]
         },
         {
             "id": "CU",
-            "description": "CUBA",
+            "description": "Cuba",
             "default": false,
             "code": "+53",
             "mask": "999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/cu.svg"
+            "flag": "http://pasion.georfacturacion.test/images/cu.svg",
+            "national_division": [
+                "Provincia",
+                "Municipio",
+                "Consejo popular"
+            ]
         },
         {
             "id": "DO",
-            "description": "DOMINICAN REPUBLIC",
+            "description": "República Dominicana",
             "default": false,
             "code": "+1",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/do.svg"
+            "flag": "http://pasion.georfacturacion.test/images/do.svg",
+            "national_division": [
+                "Provincia",
+                "Municipio"
+            ]
         },
         {
             "id": "EC",
-            "description": "ECUADOR",
+            "description": "Ecuador",
             "default": false,
             "code": "+593",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/ec.svg"
+            "flag": "http://pasion.georfacturacion.test/images/ec.svg",
+            "national_division": [
+                "Provincia",
+                "Cantón",
+                "Parroquia"
+            ]
         },
         {
             "id": "SV",
-            "description": "EL SALVADOR",
+            "description": "El Salvador",
             "default": false,
             "code": "+503",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/sv.svg"
+            "flag": "http://pasion.georfacturacion.test/images/sv.svg",
+            "national_division": [
+                "Departamento",
+                "Municipio"
+            ]
         },
         {
             "id": "GD",
-            "description": "GRENADA",
+            "description": "Grenada",
             "default": false,
             "code": "+1",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/gd.svg"
+            "flag": "http://pasion.georfacturacion.test/images/gd.svg",
+            "national_division": [
+                "Parroquia"
+            ]
         },
         {
             "id": "GT",
-            "description": "GUATEMALA",
+            "description": "Guatemala",
             "default": false,
             "code": "+502",
             "mask": "5999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/gt.svg"
+            "flag": "http://pasion.georfacturacion.test/images/gt.svg",
+            "national_division": [
+                "Departamento",
+                "Municipio",
+                "Aldea o Caserío"
+            ]
         },
         {
             "id": "GY",
-            "description": "GUYANA",
+            "description": "Guyana",
             "default": false,
             "code": "+592",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/gy.svg"
+            "flag": "http://pasion.georfacturacion.test/images/gy.svg",
+            "national_division": [
+                "Región",
+                "Distrito"
+            ]
         },
         {
             "id": "HT",
-            "description": "HAITI",
+            "description": "Haiti",
             "default": false,
             "code": "+509",
             "mask": "99 99 9999",
-            "flag": "http://pasion.georfacturacion.test/images/ht.svg"
+            "flag": "http://pasion.georfacturacion.test/images/ht.svg",
+            "national_division": [
+                "Departamento",
+                "Arrondissement",
+                "Municipio o Comuna"
+            ]
         },
         {
             "id": "HN",
-            "description": "HONDURAS",
+            "description": "Honduras",
             "default": false,
             "code": "+504",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/hn.svg"
+            "flag": "http://pasion.georfacturacion.test/images/hn.svg",
+            "national_division": [
+                "Departamento",
+                "Municipio",
+                "Aldea o Caserío"
+            ]
         },
         {
             "id": "JM",
-            "description": "JAMAICA",
+            "description": "Jamaica",
             "default": false,
             "code": "+1",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/jm.svg"
+            "flag": "http://pasion.georfacturacion.test/images/jm.svg",
+            "national_division": [
+                "Parroquia",
+                "Municipalidad"
+            ]
         },
         {
             "id": "MX",
-            "description": "MEXICO",
+            "description": "Mexico",
             "default": false,
             "code": "+52",
             "mask": "99 9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/mx.svg"
+            "flag": "http://pasion.georfacturacion.test/images/mx.svg",
+            "national_division": [
+                "Estado",
+                "Municipio",
+                "Localidad"
+            ]
         },
         {
             "id": "NI",
-            "description": "NICARAGUA",
+            "description": "Nicaragua",
             "default": false,
             "code": "+505",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/ni.svg"
+            "flag": "http://pasion.georfacturacion.test/images/ni.svg",
+            "national_division": [
+                "Region",
+                "Departamento",
+                "Municipio"
+            ]
         },
         {
             "id": "PA",
-            "description": "PANAMA",
+            "description": "Panama",
             "default": false,
             "code": "+507",
             "mask": "9999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/pa.svg"
+            "flag": "http://pasion.georfacturacion.test/images/pa.svg",
+            "national_division": [
+                "Provincia",
+                "Municipio",
+                "Corregimiento"
+            ]
         },
         {
             "id": "PY",
-            "description": "PARAGUAY",
+            "description": "Paraguay",
             "default": false,
             "code": "+595",
             "mask": "9999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/py.svg"
+            "flag": "http://pasion.georfacturacion.test/images/py.svg",
+            "national_division": [
+                "Departamento",
+                "Distrito"
+            ]
         },
         {
             "id": "PE",
-            "description": "PERU",
+            "description": "Peru",
             "default": true,
             "code": "+51",
             "mask": "999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/pe.svg"
+            "flag": "http://pasion.georfacturacion.test/images/pe.svg",
+            "national_division": [
+                "Departamento",
+                "Provincia",
+                "Distrito"
+            ]
         },
         {
             "id": "PT",
-            "description": "PORTUGAL",
+            "description": "Portugal",
             "default": false,
             "code": "+351",
             "mask": "999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/pt.svg"
+            "flag": "http://pasion.georfacturacion.test/images/pt.svg",
+            "national_division": [
+                "Region Autónoma",
+                "Distrito",
+                "Municipio"
+            ]
         },
         {
             "id": "PR",
-            "description": "PUERTO RICO",
+            "description": "Puerto Rico",
             "default": false,
             "code": "+1",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/pr.svg"
+            "flag": "http://pasion.georfacturacion.test/images/pr.svg",
+            "national_division": [
+                "Municipio",
+                "Barrio o Sector"
+            ]
         },
         {
             "id": "SR",
-            "description": "SURINAME",
+            "description": "Suriname",
             "default": false,
             "code": "+597",
             "mask": "8999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/sr.svg"
+            "flag": "http://pasion.georfacturacion.test/images/sr.svg",
+            "national_division": [
+                "Distrito",
+                "Resorten",
+                "Dorpen"
+            ]
         },
         {
             "id": "UY",
-            "description": "URUGUAY",
+            "description": "Uruguay",
             "default": false,
             "code": "+598",
             "mask": "999 999 999",
-            "flag": "http://pasion.georfacturacion.test/images/uy.svg"
+            "flag": "http://pasion.georfacturacion.test/images/uy.svg",
+            "national_division": [
+                "Departamento",
+                "Municipio",
+                "Localidad"
+            ]
         },
         {
             "id": "VE",
-            "description": "VENEZUELA",
+            "description": "Venezuela",
             "default": false,
             "code": "+58",
             "mask": "999 999 9999",
-            "flag": "http://pasion.georfacturacion.test/images/ve.svg"
+            "flag": "http://pasion.georfacturacion.test/images/ve.svg",
+            "national_division": [
+                "Estado",
+                "Municipio",
+                "Parroquia"
+            ]
         }
     ],
     "success": true,
