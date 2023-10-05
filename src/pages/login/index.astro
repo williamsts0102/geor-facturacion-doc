@@ -1,0 +1,89 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Inicio de sesión">
+	<h5>Iniciar sesión</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Endpoint para iniciar sesión en la tienda
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/login</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request: </strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "username": "demo@gmail.com|978456321",
+    "country_id": "PE",
+    "password": "micontraseñasuperoculta"
+}, null, 2)
+		}
+	</pre>
+	<p><strong>Tabla de referencias</strong></p>
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Validación</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>username</td>
+				<td>Correo electrónico o número de teléfono del usuario</td>
+				<td>Cadena</td>
+				<td>Máximo 200 caracteres</td>
+				<td>Si</td>
+			</tr>
+			<tr>
+				<td>country_id</td>
+				<td>Código ISO del país del usuario</td>
+				<td>Cadena</td>
+				<td>El valor ingresado debe existir dentro de la tabla de países disponibles del sistema</td>
+				<td>Si</td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td>Contraseña</td>
+				<td>Cadena</td>
+				<td>Mínimo 6 caracteres, máximo 50 caracteres</td>
+				<td>Si</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "data": {
+        "user": {
+            "id": 29,
+            "name": "Nombre del usuario",
+            "email": "demo@gmail.com",
+            "phone": "789654123",
+            "api_token": "ZJyYJdididiid2XKxZ0U0Bed6XQVOZzkLqlIluwE8eBhvlUveoaap5SP4s9HxvFsNasvnMGa",
+            "has_verified": true,
+            "avatar": "http://georfacturacion.test/storage/avatars/169541691028.png",
+            "extras": {
+                "lang": "en",
+                "theme": "dark",
+                "facebook": "https://faceboo.com/yoelct"
+            },
+            "created_at": "20-09-2023 16:06:56"
+        },
+        "token": "ZJyYJ2XKxZ0U0Bed6XQVOZzkLqlIluwE8eBhvlUveoaap5SP4s9HxvFsNasvnMGa"
+    }
+}, null, 2)}
+	</pre>
+</MainLayout>
