@@ -20,7 +20,31 @@ import MainLayout from '../../layouts/MainLayout.astro';
 	</p>
 	<pre>
 		{ JSON.stringify({
-    "email": "liz@gmail.com"
+    "email": "demo@gmail.com"
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "Se ha enviado un código de verificación al correo electrónico ingresado, reviselo y siga las instrucciones."
+}, null, 2)}
+	</pre>
+	<br><br>
+	<h6>Reenviar código de verificación al correo electrónico del usuario</h6>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/reset-password/resend-code</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "email": "demo@gmail.com"
 }, null, 2)}
 	</pre>
 	<p>
@@ -44,7 +68,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 	</p>
 	<pre>
 		{ JSON.stringify({
-    "email": "liz@gmail.com",
+    "email": "demo@gmail.com",
     "code": "622391",
     "password": "Demo#123",
     "password_confirmation": "Demo#123"
