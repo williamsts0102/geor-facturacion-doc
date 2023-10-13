@@ -1,0 +1,113 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+    <h5>Sucursal</h5>
+    <hr />
+    <p>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </p>
+    <hr />
+    <h6>Listado de sucursales</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para ver todo el listado de los
+        establecimientos
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/ecommerce/establishments</span
+        >
+    </p>
+    <p><strong>Método:</strong>GET</p>
+
+    <p>
+        <strong>Tabla de referencias</strong>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Columna</th>
+                <th>Descripción</th>
+                <th>Tipo de dato</th>
+                <th>Requerido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>description</td>
+                <td>Nombre o descripción de la dirección</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>Logo</td>
+                <td>Imagen</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>Departamento donde se encuentra la sucursal</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>province</td>
+                <td>Provincia donde se encuentra la sucursal</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>district</td>
+                <td>Distrito donde se encuentra la sucursal</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>Dirección de una sucursal o ubicación</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>latitude</td>
+                <td>Almacena la latitud de la ubicación geográfica</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>longitude</td>
+                <td
+                    >Se utiliza en combinación con la latitud para ubicar el
+                    establecimiento</td
+                >
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+		{ JSON.stringify({
+            "data": [
+                {
+                    "id": 4,
+                    "description": "color azul con negro",
+                    "logo": "https://apex20.georfacturacion.test/storage/uploads/logos/0eAZZExneVTA7kijXWj3DfZJ6glcbo1tSxDKYHpI.jpg",
+                    "department": "AYACUCHO",
+                    "province": "Huanca Sancos",
+                    "district": "Sancos",
+                    "address": "Pj.zarate ",
+                    "latitude": "40.71285",
+                    "longitude": "-74.00605"}
+            ],
+            "success": true,
+            "message": "Listado mostrados de forma correcta."}, null, 2)}
+    </pre>
+</MainLayout>
