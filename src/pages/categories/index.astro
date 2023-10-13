@@ -1,0 +1,524 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Categorías">
+	<h5>Listado de categorias</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Endpoint que devuelve el listado de categorías disponibles de la tienda
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/categories</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "name": "",
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "data": [
+        {
+            "id": 36,
+            "name": "Para tí",
+            "slug": "para-ti"
+        },
+        {
+            "id": 37,
+            "name": "Destacados",
+            "slug": "destacados"
+        },
+        {
+            "id": 38,
+            "name": "Los más vendidos",
+            "slug": "los-mas-vendidos"
+        },
+        {
+            "id": 39,
+            "name": "Los más nuevos",
+            "slug": "los-mas-nuevos"
+        }
+    ]
+}, null, 2)}
+	</pre>
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>name</td>
+				<td>Todo o parte del nombre de una categoría</td>
+				<td>Cadena</td>
+				<td>No</td>
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<h5>Detalles de una categoría</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Se devuelve todos los datos de una categoría como archivos, imagenes, productos y sus variantes.
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/categories/destacados</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "per_page": "2",
+    "page": "1"
+}, null, 2)}
+	</pre>
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>per_page</td>
+				<td>Número de productos que se van a mostrar de la categoría</td>
+				<td>Número</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>page</td>
+				<td>Número de página</td>
+				<td>Número</td>
+				<td>No</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "data": {
+        "id": 37,
+        "name": "Destacados",
+        "slug": "destacados",
+        "description": "Aqui estaran todos los productos que el vendedor quiere destacar para una venta segura",
+        "cover_desktop": null,
+        "cover_movil": null,
+        "products": [
+            {
+                "id": 1376,
+                "description": "ALAMBRE 3.75 MM",
+                "internal_id": "ALA-ALA003",
+                "price": 5564.88,
+                "in_offer": true,
+                "offer_price": 5500,
+                "prices": [
+                    {
+                        "price": "5000",
+                        "max_quantity": "500",
+                        "min_quantity": "1"
+                    },
+                    {
+                        "price": "4950",
+                        "max_quantity": "2000",
+                        "min_quantity": "501"
+                    }
+                ],
+                "has_variants": true,
+                "files": [
+                    {
+                        "id": 154,
+                        "description": null,
+                        "is_cover": true,
+                        "path": "http://georfacturacion.test/storage/uploads/variants/GtjrxddfbgIc1TswiCKB1zaCss0pEAxrLGZNuEDT.jpg"
+                    },
+                    {
+                        "id": 155,
+                        "description": null,
+                        "is_cover": false,
+                        "path": "http://georfacturacion.test/storage/uploads/variants/z3bWEfCgDCI74XzXOuxir7woJ9wEllFHJgDhQmks.jpg"
+                    },
+                    {
+                        "id": 156,
+                        "description": null,
+                        "is_cover": false,
+                        "path": "http://georfacturacion.test/storage/uploads/variants/wMTZ3PVrlGr2ryZvnN36kV6utB3sm2AAAY13rFNo.webp"
+                    }
+                ],
+                "variants": [
+                    {
+                        "id": 360,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 979,
+                                "attribute": "Color",
+                                "value": "Rojo",
+                                "color": "#FF0000"
+                            },
+                            {
+                                "id": 980,
+                                "attribute": "Talla",
+                                "value": "S",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 361,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 981,
+                                "attribute": "Color",
+                                "value": "Rojo",
+                                "color": "#FF0000"
+                            },
+                            {
+                                "id": 982,
+                                "attribute": "Talla",
+                                "value": "M",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 362,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 983,
+                                "attribute": "Color",
+                                "value": "Rojo",
+                                "color": "#FF0000"
+                            },
+                            {
+                                "id": 984,
+                                "attribute": "Talla",
+                                "value": "L",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 363,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 985,
+                                "attribute": "Color",
+                                "value": "Negro",
+                                "color": "#000000"
+                            },
+                            {
+                                "id": 986,
+                                "attribute": "Talla",
+                                "value": "S",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 364,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 987,
+                                "attribute": "Color",
+                                "value": "Negro",
+                                "color": "#000000"
+                            },
+                            {
+                                "id": 988,
+                                "attribute": "Talla",
+                                "value": "M",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 365,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 989,
+                                "attribute": "Color",
+                                "value": "Negro",
+                                "color": "#000000"
+                            },
+                            {
+                                "id": 990,
+                                "attribute": "Talla",
+                                "value": "L",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 366,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 991,
+                                "attribute": "Color",
+                                "value": "Azul",
+                                "color": "#1500FF"
+                            },
+                            {
+                                "id": 992,
+                                "attribute": "Talla",
+                                "value": "S",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 367,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 993,
+                                "attribute": "Color",
+                                "value": "Azul",
+                                "color": "#1500FF"
+                            },
+                            {
+                                "id": 994,
+                                "attribute": "Talla",
+                                "value": "M",
+                                "color": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 368,
+                        "sku": "ALA-ALA003",
+                        "price": 5564.88,
+                        "in_offer": false,
+                        "offer_price": 0,
+                        "stock": 0,
+                        "prices": [
+                            {
+                                "price": "5000",
+                                "max_quantity": "500",
+                                "min_quantity": "1"
+                            },
+                            {
+                                "price": "4950",
+                                "max_quantity": "2000",
+                                "min_quantity": "501"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "id": 995,
+                                "attribute": "Color",
+                                "value": "Azul",
+                                "color": "#1500FF"
+                            },
+                            {
+                                "id": 996,
+                                "attribute": "Talla",
+                                "value": "L",
+                                "color": null
+                            }
+                        ]
+                    }
+                ],
+                "currency": {
+                    "id": "USD",
+                    "description": "Dólares Americanos",
+                    "symbol": "$"
+                },
+                "unit_type": {
+                    "id": "KGM",
+                    "description": "Kilos"
+                }
+            },
+            {
+                "id": 604,
+                "description": "ALAMBRE 4.00 MM",
+                "internal_id": "ALA-4MM001",
+                "price": 1.121,
+                "in_offer": false,
+                "offer_price": 0,
+                "prices": null,
+                "has_variants": false,
+                "files": [
+                    {
+                        "id": 157,
+                        "description": null,
+                        "is_cover": true,
+                        "path": "http://georfacturacion.test/storage/uploads/variants/HZvXbPRWNkmsed6tWWubc3koAATajtwlneViXUMt.jpg"
+                    },
+                    {
+                        "id": 158,
+                        "description": null,
+                        "is_cover": false,
+                        "path": "http://georfacturacion.test/storage/uploads/variants/0nw0ZCWqQn20iZIMSTFuMaJtRlgS2puQ0AqJjUM6.webp"
+                    }
+                ],
+                "variants": [],
+                "currency": {
+                    "id": "USD",
+                    "description": "Dólares Americanos",
+                    "symbol": "$"
+                },
+                "unit_type": {
+                    "id": "KGM",
+                    "description": "Kilos"
+                }
+            }
+        ]
+    }
+}, null, 2)}
+	</pre>
+</MainLayout>
