@@ -1,0 +1,188 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+    <h5>CRUD de Tarjeta de usuario</h5>
+    <hr />
+    <p>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </p>
+    <hr />
+    <p>
+        <strong>Tabla de referencias</strong>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Columna</th>
+                <th>Descripción</th>
+                <th>Tipo de dato</th>
+                <th>Validación</th>
+                <th>Requerido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>number</td>
+                <td>Número de la tarjeta</td>
+                <td>String</td>
+                <td>Máximo 25 caracteres</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>titular</td>
+                <td>Nombre del titular de la tarjeta</td>
+                <td>String</td>
+                <td>Máximo 50 caracteres</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>expiration_date</td>
+                <td>Fecha de expiración de la tarjeta</td>
+                <td>String</td>
+                <td>Máximo 7 caracteres</td>
+                <td>Si</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <h6>Listado de sucursales</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para ver todo el listado de las
+        tarjetas
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span>http://pasion.georfacturacion.test/api/v1/ecommerce/card</span>
+    </p>
+    <p><strong>Método:</strong>GET</p>
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+        No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+		{ JSON.stringify({
+            "data": [
+                {
+                    "id": 7,
+                    "number": "Pichincha",
+                    "titular": "jose",
+                    "expiration_date": "10/23"},
+                {
+                    "id": 8,
+                    "number": "STK",
+                    "titular": "michael",
+                    "expiration_date": "20/10"}
+            ],
+            "success": true,
+            "message": "Listado de datos mostrados de forma correcta."}, null, 2)}
+    </pre>
+
+    <h6>Registro de tarjeta</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para registrar la tarjeta de
+        usuario
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/ecommerce/card/register</span
+        >
+    </p>
+    <p><strong>Método:</strong>POST</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify({
+    "number":"4578412563541874596354925",
+    "titular":"michael",
+    "expiration_date":"10/23"}, null, 2)
+    }
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+        { JSON.stringify({
+            "data": {
+                "id": 10,
+                "number": "4578412563541874596354925",
+                "titular": "michael",
+                "expiration_date": "10/23"},
+            "success": true,
+            "message": "Tipo de documento creado de forma correcta."}, null, 2)}
+    </pre>
+
+    <h6>Actualizar tarjeta</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint actualizar la tarjeta de usuario
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/ecommerce/card/update/[Identificador]</span
+        >
+    </p>
+    <p><strong>Método:</strong>PUT</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify(   {
+    "number":"STK",
+    "titular":"michael",
+    "expiration_date":"20/10"}, null, 2)
+    }
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+		{ JSON.stringify({
+            "data": {
+                "id": 10,
+                "number": "STK",
+                "titular": "michael",
+                "expiration_date": "20/10"},
+            "success": true,
+            "message": "El tipo de documento seleccionado fue actualizado de forma correcta."}, null, 2)}
+    </pre>
+
+    <h6>Eliminar tarjeta de usuario</h6>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/ecommerce/card/delete/[Identificador]</span
+        >
+    </p>
+    <p><strong>Método:</strong> DELETE</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+	{ JSON.stringify({
+   "success": true,
+    "message": "Información procesada con éxito",
+    }, null, 2)}
+    </pre>
+</MainLayout>
