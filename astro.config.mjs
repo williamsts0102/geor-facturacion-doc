@@ -8,7 +8,7 @@ export default defineConfig({
   sitemap: true,
   site: 'https:/joel2010.github.io',
   integrations: [mdx(), sitemap()],
-  outDir: 'public',
+  outDir: 'dist',
   publicDir: 'public',
-  base: '/geor-ecommerce-docs',
+//   base: '/geor-ecommerce-docs',
 });
