@@ -1,0 +1,155 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Tablas auxiliares para listado de productos">
+	<h5>Listado de tablas auxiliares para filtrar productos</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Endpoint donde se ve un listado de categorías, atributos y sus valores
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/shop/tables</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "data": {
+        "categories": [
+            {
+                "id": 36,
+                "name": "Para tí",
+                "slug": "para-ti"
+            },
+            {
+                "id": 37,
+                "name": "Destacados",
+                "slug": "destacados"
+            },
+            {
+                "id": 38,
+                "name": "Los más vendidos",
+                "slug": "los-mas-vendidos"
+            },
+            {
+                "id": 39,
+                "name": "Los más nuevos",
+                "slug": "los-mas-nuevos"
+            }
+        ],
+        "attributes": [
+            {
+                "id": 4,
+                "description": "Color",
+                "type": "color",
+                "values": [
+                    {
+                        "id": 7,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Rojo",
+                        "color": "#FF0000"
+                    },
+                    {
+                        "id": 14,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Verde",
+                        "color": "#BFB711"
+                    },
+                    {
+                        "id": 20,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Marron",
+                        "color": "#0C6228"
+                    },
+                    {
+                        "id": 8,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Negro",
+                        "color": "#000000"
+                    },
+                    {
+                        "id": 9,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Azul",
+                        "color": "#1500FF"
+                    },
+                    {
+                        "id": 15,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Amarillo",
+                        "color": "#EAFF00"
+                    },
+                    {
+                        "id": 16,
+                        "ecommerce_attribute_id": 4,
+                        "value": "Celeste",
+                        "color": "#00BBF4"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "description": "Talla",
+                "type": "text",
+                "values": [
+                    {
+                        "id": 2,
+                        "ecommerce_attribute_id": 6,
+                        "value": "S",
+                        "color": null
+                    },
+                    {
+                        "id": 3,
+                        "ecommerce_attribute_id": 6,
+                        "value": "M",
+                        "color": null
+                    },
+                    {
+                        "id": 4,
+                        "ecommerce_attribute_id": 6,
+                        "value": "L",
+                        "color": null
+                    },
+                    {
+                        "id": 5,
+                        "ecommerce_attribute_id": 6,
+                        "value": "XL",
+                        "color": null
+                    },
+                    {
+                        "id": 6,
+                        "ecommerce_attribute_id": 6,
+                        "value": "XXL",
+                        "color": null
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "description": "Medida",
+                "type": "text",
+                "values": [
+                    {
+                        "id": 1,
+                        "ecommerce_attribute_id": 7,
+                        "value": "10 x 20 CM",
+                        "color": null
+                    },
+                    {
+                        "id": 18,
+                        "ecommerce_attribute_id": 7,
+                        "value": "1 x 1 Metro",
+                        "color": null
+                    }
+                ]
+            },
+        ]
+    }
+}, null, 2)}
+	</pre>
+</MainLayout>
