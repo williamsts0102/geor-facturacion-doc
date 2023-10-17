@@ -1,0 +1,195 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Listado de productos">
+	<h5>Listado de productos</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Endpoint donde se muestra a todos los productos visibles para mostrar en la tienda
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/shop/products</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "description": "",
+    "page": 1,
+    "limit": 5,
+    "categories": [],
+    "attributes": [
+        {
+            "attribute_id": 4,
+            "value_id": 7
+        },
+        {
+            "attribute_id": 6,
+            "value_id": 2
+        }
+    ],
+	"min_price": 50,
+    "max_price": 100,
+    "sort_by": "created_at",
+    "sort_direction": "desc"
+}, null, 2)
+		}
+	</pre>
+	<table>
+		<thead>
+			<tr>
+				<th>Columna</th>
+				<th>Descripción</th>
+				<th>Tipo de dato</th>
+				<th>Validación</th>
+				<th>Requerido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>description</td>
+				<td>Parte o todo el nombre del producto</td>
+				<td>String</td>
+				<td>Máximo 250 caracteres</td>
+				<td>Si</td>
+			</tr>
+			<tr>
+				<td>page</td>
+				<td>Número de página que se va a visualizar</td>
+				<td>Number</td>
+				<td>Mínimo 1, valor por defecto 1</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>limit</td>
+				<td>Número de productos que se va a mostrar por página</td>
+				<td>Number</td>
+				<td>Mínimo 6, valor por defecto 6</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>categories</td>
+				<td>Array de ids de categorías</td>
+				<td>Array[int]</td>
+				<td></td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>attributes</td>
+				<td>Array de objetos de atributos donde cada objeto debe contener un valor númerico</td>
+				<td>Array[{ JSON.stringify({"attribute_id": 4, "value_id": 7}, null, 2)}]</td>
+				<td></td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>min_price</td>
+				<td>Precio mínimo del producto</td>
+				<td>Number</td>
+				<td></td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>max_price</td>
+				<td>Precio máximo del producto</td>
+				<td>Number</td>
+				<td></td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>sort_by</td>
+				<td>Campo para ordenar el listado de productos</td>
+				<td>string</td>
+				<td>created_at | sale_unit_price</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>sort_direction</td>
+				<td>Orden en la cual se mostraran el listado de productos</td>
+				<td>string</td>
+				<td>asc | desc</td>
+				<td>No</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "current_page": 1,
+    "data": [
+        {
+            "id": 2218,
+            "description": "ASADO DE TIRA",
+            "in_shop": true,
+            "has_variants": false,
+            "sale_unit_price": 25,
+            "in_offer": false,
+            "offer_price": 0,
+            "prices": null,
+            "files": []
+        },
+        {
+            "id": 2214,
+            "description": "ASADO PEJERREY",
+            "in_shop": true,
+            "has_variants": false,
+            "sale_unit_price": 28,
+            "in_offer": false,
+            "offer_price": 0,
+            "prices": null,
+            "files": []
+        },
+        {
+            "id": 2199,
+            "description": "Anticipo del 30% por la compra de 02 TABLERO BY PASS 25 KVA para el P",
+            "in_shop": true,
+            "has_variants": false,
+            "sale_unit_price": 100,
+            "in_offer": false,
+            "offer_price": 0,
+            "prices": null,
+            "files": []
+        },
+        {
+            "id": 2069,
+            "description": "AGENDAS PARA OFICINA",
+            "in_shop": true,
+            "has_variants": false,
+            "sale_unit_price": 17,
+            "in_offer": false,
+            "offer_price": 0,
+            "prices": null,
+            "files": []
+        },
+        {
+            "id": 1813,
+            "description": "APARATO TELÉFONICO",
+            "in_shop": true,
+            "has_variants": false,
+            "sale_unit_price": 956,
+            "in_offer": false,
+            "offer_price": 0,
+            "prices": null,
+            "files": []
+        }
+    ],
+    "first_page_url": "http://pasion.georfacturacion.test/api/v1/ecommerce/shop/products?page=1",
+    "from": 1,
+    "last_page": 9,
+    "last_page_url": "http://pasion.georfacturacion.test/api/v1/ecommerce/shop/products?page=9",
+    "next_page_url": "http://pasion.georfacturacion.test/api/v1/ecommerce/shop/products?page=2",
+    "path": "http://pasion.georfacturacion.test/api/v1/ecommerce/shop/products",
+    "per_page": 5,
+    "prev_page_url": null,
+    "to": 5,
+    "total": 45
+}, null, 2)}
+	</pre>
+</MainLayout>
