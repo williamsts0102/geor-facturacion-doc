@@ -6,9 +6,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   sitemap: true,
-  site: 'https:/joel2010.github.io',
+  site: 'https://joel2010.github.io/geor-ecommerce-docs',
   integrations: [mdx(), sitemap()],
   outDir: 'dist',
   publicDir: 'public',
-  base: '/geor-ecommerce-docs',
+  //   base: '/geor-ecommerce-docs',
 });
