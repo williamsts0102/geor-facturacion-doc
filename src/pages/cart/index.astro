@@ -1,0 +1,1788 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Agregar un producto al carrito">
+	<h5>Agregar un producto al carrito</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>En este endpoint se agrega un producto a nuestro carrito
+	</p>
+	<p>
+		<strong>Detalles: </strong>
+		<span>Si la sesión actual(web o movíl) no tiene un carrito, el sistema automaticamente creará un carrito al cual se le agregará el producto seleccionado. Si el usuario esta logueado el sistema automaticamente asigna el usuario al carrito.</span>
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/carts</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request con producto simple</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "item_id": 824,
+    "quantity": 1
+}, null, 2)
+		}
+	</pre>
+	<p>
+		<strong>Request con producto con variantes</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "item_id": 2069,
+    "quantity": 5,
+    "variants": [
+        {
+            "id": 377,
+            "quantity": 5
+        }
+    ]
+}, null, 2)
+		}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "success": true,
+    "message": "Información procesada de forma correcta.",
+    "data": {
+        "code": "a158b90f-b73d-474c-bbda-85a26f5b350f",
+        "status": "PENDIENTE",
+        "payment_method": "",
+        "quantity": 45,
+        "subtotal": 373.4092,
+        "total_taxes": 67.2136,
+        "discounts": 0,
+        "total": 440.6228,
+        "items": [
+            {
+                "id": 2,
+                "quantity": 22,
+                "subtotal": 31.46,
+                "total_taxes": 5.6628,
+                "discounts": 0,
+                "total": 37.1228,
+                "data": {
+                    "item_id": 540,
+                    "quantity": 22
+                },
+                "item": {
+                    "id": 540,
+                    "files": [],
+                    "price": 1.6874,
+                    "stock": 496,
+                    "prices": [],
+                    "currency": {
+                        "id": "USD",
+                        "symbol": "$",
+                        "description": "Dólares Americanos"
+                    },
+                    "in_offer": false,
+                    "variants": [],
+                    "unit_type": {
+                        "id": "KGM",
+                        "description": "Kilos"
+                    },
+                    "additional": null,
+                    "description": "ALAMBRE 1.30 MM",
+                    "internal_id": "ALA-ALA001",
+                    "offer_price": 0,
+                    "has_variants": false,
+                    "specifications": []
+                }
+            },
+            {
+                "id": 3,
+                "quantity": 22,
+                "subtotal": 316.9492,
+                "total_taxes": 57.0508,
+                "discounts": 0,
+                "total": 374,
+                "data": {
+                    "item_id": 2069,
+                    "quantity": 22
+                },
+                "item": {
+                    "id": 2069,
+                    "files": [],
+                    "price": 17,
+                    "stock": 1,
+                    "prices": [],
+                    "currency": {
+                        "id": "PEN",
+                        "symbol": "S/",
+                        "description": "Soles"
+                    },
+                    "in_offer": false,
+                    "variants": [
+                        {
+                            "id": 377,
+                            "sku": "AGE-OFI001",
+                            "files": [
+                                {
+                                    "id": 159,
+                                    "path": "http://georfacturacion.test/storage/uploads/variants/KDzmeYblbIaSPYPKc6UMWp1g0MGONi3PbUNWIFpY.jpg",
+                                    "size": 0.42,
+                                    "is_cover": true,
+                                    "extension": "jpg"
+                                }
+                            ],
+                            "price": 17,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 1013,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 378,
+                            "sku": "AGE-OFI001",
+                            "files": [
+                                {
+                                    "id": 160,
+                                    "path": "http://georfacturacion.test/storage/uploads/variants/1S1aUg92qNPQd268BNQPlmK6fGDBbqXsvp13DSrm.jpg",
+                                    "size": 0.07,
+                                    "is_cover": true,
+                                    "extension": "jpg"
+                                }
+                            ],
+                            "price": 17,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 1014,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        }
+                    ],
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "additional": null,
+                    "description": "AGENDAS PARA OFICINA",
+                    "internal_id": "AGE-OFI001",
+                    "offer_price": 0,
+                    "has_variants": true,
+                    "specifications": []
+                }
+            },
+            {
+                "id": 4,
+                "quantity": 1,
+                "subtotal": 25,
+                "total_taxes": 4.5,
+                "discounts": 0,
+                "total": 29.5,
+                "data": {
+                    "item_id": 824,
+                    "quantity": 1
+                },
+                "item": {
+                    "id": 824,
+                    "files": [],
+                    "price": 31,
+                    "stock": 4,
+                    "prices": [],
+                    "currency": {
+                        "id": "PEN",
+                        "symbol": "S/",
+                        "description": "Soles"
+                    },
+                    "in_offer": true,
+                    "variants": [
+                        {
+                            "id": 340,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 939,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 940,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 341,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 941,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 942,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 342,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 943,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 944,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 343,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 945,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 946,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 344,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 947,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 948,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 345,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 949,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 950,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 346,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 951,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 952,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 347,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 953,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 954,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 348,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 955,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 956,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 349,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 957,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 958,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 350,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 959,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 960,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 351,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 961,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 962,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 352,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 963,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 964,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 353,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 965,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 966,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 354,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 967,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 968,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 355,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 969,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 970,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        }
+                    ],
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "additional": null,
+                    "description": "63460 LATEX PATO",
+                    "internal_id": "LAT-PAT001",
+                    "offer_price": 25,
+                    "has_variants": true,
+                    "specifications": []
+                }
+            }
+        ]
+    }
+}, null, 2)
+		}
+	</pre>
+	<br><br>
+	<h5>Recuperar carrito</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>Este endpoint retorna el carrito que el dispositivo tiene asignado
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/carts</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "success": true,
+    "message": "Información procesada de forma correcta.",
+    "data": {
+        "code": "a158b90f-b73d-474c-bbda-85a26f5b350f",
+        "status": "PENDIENTE",
+        "payment_method": "",
+        "quantity": 45,
+        "subtotal": 373.4092,
+        "total_taxes": 67.2136,
+        "discounts": 0,
+        "total": 440.6228,
+        "items": [
+            {
+                "id": 2,
+                "quantity": 22,
+                "subtotal": 31.46,
+                "total_taxes": 5.6628,
+                "discounts": 0,
+                "total": 37.1228,
+                "data": {
+                    "item_id": 540,
+                    "quantity": 22
+                },
+                "item": {
+                    "id": 540,
+                    "files": [],
+                    "price": 1.6874,
+                    "stock": 496,
+                    "prices": [],
+                    "currency": {
+                        "id": "USD",
+                        "symbol": "$",
+                        "description": "Dólares Americanos"
+                    },
+                    "in_offer": false,
+                    "variants": [],
+                    "unit_type": {
+                        "id": "KGM",
+                        "description": "Kilos"
+                    },
+                    "additional": null,
+                    "description": "ALAMBRE 1.30 MM",
+                    "internal_id": "ALA-ALA001",
+                    "offer_price": 0,
+                    "has_variants": false,
+                    "specifications": []
+                }
+            },
+            {
+                "id": 3,
+                "quantity": 22,
+                "subtotal": 316.9492,
+                "total_taxes": 57.0508,
+                "discounts": 0,
+                "total": 374,
+                "data": {
+                    "item_id": 2069,
+                    "quantity": 22
+                },
+                "item": {
+                    "id": 2069,
+                    "files": [],
+                    "price": 17,
+                    "stock": 1,
+                    "prices": [],
+                    "currency": {
+                        "id": "PEN",
+                        "symbol": "S/",
+                        "description": "Soles"
+                    },
+                    "in_offer": false,
+                    "variants": [
+                        {
+                            "id": 377,
+                            "sku": "AGE-OFI001",
+                            "files": [
+                                {
+                                    "id": 159,
+                                    "path": "http://georfacturacion.test/storage/uploads/variants/KDzmeYblbIaSPYPKc6UMWp1g0MGONi3PbUNWIFpY.jpg",
+                                    "size": 0.42,
+                                    "is_cover": true,
+                                    "extension": "jpg"
+                                }
+                            ],
+                            "price": 17,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 1013,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 378,
+                            "sku": "AGE-OFI001",
+                            "files": [
+                                {
+                                    "id": 160,
+                                    "path": "http://georfacturacion.test/storage/uploads/variants/1S1aUg92qNPQd268BNQPlmK6fGDBbqXsvp13DSrm.jpg",
+                                    "size": 0.07,
+                                    "is_cover": true,
+                                    "extension": "jpg"
+                                }
+                            ],
+                            "price": 17,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 1014,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        }
+                    ],
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "additional": null,
+                    "description": "AGENDAS PARA OFICINA",
+                    "internal_id": "AGE-OFI001",
+                    "offer_price": 0,
+                    "has_variants": true,
+                    "specifications": []
+                }
+            },
+            {
+                "id": 4,
+                "quantity": 1,
+                "subtotal": 25,
+                "total_taxes": 4.5,
+                "discounts": 0,
+                "total": 29.5,
+                "data": {
+                    "item_id": 824,
+                    "quantity": 1
+                },
+                "item": {
+                    "id": 824,
+                    "files": [],
+                    "price": 31,
+                    "stock": 4,
+                    "prices": [],
+                    "currency": {
+                        "id": "PEN",
+                        "symbol": "S/",
+                        "description": "Soles"
+                    },
+                    "in_offer": true,
+                    "variants": [
+                        {
+                            "id": 340,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 939,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 940,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 341,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 941,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 942,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 342,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 943,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 944,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 343,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 945,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 946,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 344,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 947,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 948,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 345,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 949,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 950,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 346,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 951,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 952,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 347,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 953,
+                                    "color": "#BFB711",
+                                    "value": "Verde",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 954,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 348,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 955,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 956,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 349,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 957,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 958,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 350,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 959,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 960,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 351,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 961,
+                                    "color": "#0C6228",
+                                    "value": "Marron",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 962,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 352,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 963,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 964,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 353,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 965,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 966,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 354,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 967,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 968,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 355,
+                            "sku": "LAT-PAT001",
+                            "files": [],
+                            "price": 31,
+                            "stock": 0,
+                            "prices": [],
+                            "values": [
+                                {
+                                    "id": 969,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 970,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        }
+                    ],
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "additional": null,
+                    "description": "63460 LATEX PATO",
+                    "internal_id": "LAT-PAT001",
+                    "offer_price": 25,
+                    "has_variants": true,
+                    "specifications": []
+                }
+            }
+        ]
+    }
+}, null, 2)
+		}
+	</pre>
+	<br><br>
+	<h5>Eliminar producto del carrito</h5>
+	<hr />
+	<p>
+		<strong>Descripción: </strong>En este endpoint muestra la forma de eliminar un producto del carrito, para esto es necesario pasar el código del carrito en la url y el número de item que se desea eliminar
+	</p>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/carts/8fd4033b-d423-42b4-ad0d-3fb9c1b0ccf8/items/3</span>
+	</p>
+	<p><strong>Método: </strong>DELETE</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{
+			JSON.stringify({
+    "success": true,
+    "message": "Información procesada de forma correcta.",
+    "data": {
+        "code": "8fd4033b-d423-42b4-ad0d-3fb9c1b0ccf8",
+        "status": "PENDIENTE",
+        "payment_method": "",
+        "quantity": 5105,
+        "subtotal": 7356.4407,
+        "total_taxes": 1324.1593,
+        "discounts": 0,
+        "total": 8680.6,
+        "items": [
+            {
+                "id": 2,
+                "quantity": 5105,
+                "subtotal": 7356.4407,
+                "total_taxes": 1324.1593,
+                "discounts": 0,
+                "total": 8680.6,
+                "item": {
+                    "id": 755,
+                    "files": [
+                        {
+                            "id": 143,
+                            "path": "http://georfacturacion.test/storage/uploads/variants/Emz6yKCplwC6OwkI4sV9qb32n5vB2PdfWoIN8F3D.png",
+                            "is_cover": true,
+                            "description": null
+                        },
+                        {
+                            "id": 144,
+                            "path": "http://georfacturacion.test/storage/uploads/variants/Cj1Tr4dxLwGNz8SY7AONStnmQZ2wxcVIKpab6as4.jpg",
+                            "is_cover": true,
+                            "description": null
+                        },
+                        {
+                            "id": 145,
+                            "path": "http://georfacturacion.test/storage/uploads/variants/303ltArBAw9t1NTdKz0HICTiyYGfu9kQIPVBwFko.png",
+                            "is_cover": true,
+                            "description": null
+                        },
+                        {
+                            "id": 147,
+                            "path": "http://georfacturacion.test/storage/uploads/variants/4qYGsl2l3ux0JocpirAyN2XLFrF1JlJ0kvnUNnyE.png",
+                            "is_cover": true,
+                            "description": null
+                        },
+                        {
+                            "id": 148,
+                            "path": "http://georfacturacion.test/storage/uploads/variants/6wEOpH3YeYnDvgasdytax8Rkt8hvmXGGFUFvdamZ.png",
+                            "is_cover": true,
+                            "description": null
+                        }
+                    ],
+                    "price": 2.12,
+                    "stock": 1,
+                    "prices": [
+                        {
+                            "price": 1.9,
+                            "in_offer": true,
+                            "offer_price": 1.8,
+                            "max_quantity": 500,
+                            "min_quantity": 101
+                        },
+                        {
+                            "price": 1.8,
+                            "in_offer": false,
+                            "offer_price": 0,
+                            "max_quantity": 1000,
+                            "min_quantity": 501
+                        },
+                        {
+                            "price": 1.7,
+                            "in_offer": false,
+                            "offer_price": 0,
+                            "max_quantity": 5000,
+                            "min_quantity": 1001
+                        }
+                    ],
+                    "currency": {
+                        "id": "PEN",
+                        "symbol": "S/",
+                        "description": "Soles"
+                    },
+                    "in_offer": true,
+                    "variants": [
+                        {
+                            "id": 369,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 997,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 998,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 370,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 999,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1000,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 371,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1001,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1002,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 372,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1003,
+                                    "color": "#FF0000",
+                                    "value": "Rojo",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1004,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 373,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1005,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1006,
+                                    "color": null,
+                                    "value": "S",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 374,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1007,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1008,
+                                    "color": null,
+                                    "value": "M",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 375,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1009,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1010,
+                                    "color": null,
+                                    "value": "L",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        },
+                        {
+                            "id": 376,
+                            "sku": "ADA-EPE001",
+                            "files": [],
+                            "price": 2.12,
+                            "stock": 0,
+                            "prices": [
+                                {
+                                    "price": 1.9,
+                                    "in_offer": true,
+                                    "offer_price": 1.8,
+                                    "max_quantity": 500,
+                                    "min_quantity": 101
+                                },
+                                {
+                                    "price": 1.8,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 1000,
+                                    "min_quantity": 501
+                                },
+                                {
+                                    "price": 1.7,
+                                    "in_offer": false,
+                                    "offer_price": 0,
+                                    "max_quantity": 5000,
+                                    "min_quantity": 1001
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "id": 1011,
+                                    "color": "#000000",
+                                    "value": "Negro",
+                                    "is_main": true,
+                                    "attribute": "Color"
+                                },
+                                {
+                                    "id": 1012,
+                                    "color": null,
+                                    "value": "XL",
+                                    "is_main": false,
+                                    "attribute": "Talla"
+                                }
+                            ],
+                            "in_offer": false,
+                            "offer_price": 0
+                        }
+                    ],
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "additional": {
+                        "value": "<p>Tienes un personaje favorito ? Un Funko Pop! Es lo mejor para tener a ese personaje que tanto te gusta y admiras contigo, nuestra misión es ayudar a los fanáticos a tener a sus personajes favoritos con ellos y completar sus colecciones! Recíbelo en la caja original, es un producto 100% Original , viene <strong>empaquetado </strong>en una caja con una ventana transparente que te permitirá observar los detalles de la figura. Los Funko Pop! tienen una amplia variedad y hay modelos para todos los gustos, Marvel, DC, <strong>Disney</strong>, Anime, Cantantes, Películas, Series, Deportes, <strong>Comics</strong>, de todo! Cuéntanos, tu ya tienes un Funko Pop?.</p><p>El producto debe encontrarse en perfecto estado tal cual fue enviado con caja cerrada</p><p><br></p>"
+                    },
+                    "description": "080 ADAPTADOR 3 A 2 PLANO L TIERRA 080 EPEM",
+                    "internal_id": "ADA-EPE001",
+                    "offer_price": 1.8,
+                    "has_variants": true,
+                    "specifications": [
+                        {
+                            "value": "1 año",
+                            "specification": "Garantía"
+                        },
+                        {
+                            "value": "No contiene EPB",
+                            "specification": "Características de salud"
+                        },
+                        {
+                            "value": "Algodón",
+                            "specification": "Material"
+                        },
+                        {
+                            "value": "ActionMan",
+                            "specification": "Personajes"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}, null, 2)
+		}
+	</pre>
+</MainLayout>
