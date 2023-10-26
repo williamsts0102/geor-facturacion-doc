@@ -1,0 +1,136 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Geor Ecommerce - Favoritos">
+	<h5>Listado</h5>
+	<p>
+		<strong>Descripción: </strong>Ver todo el listado de productos marcados como favoritos
+	</p>
+	<blockquote>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </blockquote>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/favorites</span>
+	</p>
+	<p><strong>Método: </strong>GET</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "data": [
+        {
+            "id": 1304,
+            "description": "ACEITE MOBIL",
+            "sale_unit_price": 38.14,
+            "currency": {
+                "id": "PEN",
+                "description": "Soles",
+                "symbol": "S/"
+            },
+            "cover": null
+        },
+        {
+            "id": 1302,
+            "description": "ACEITE MOBIL 10W 30 SYNTHETIC",
+            "sale_unit_price": 144.07,
+            "currency": {
+                "id": "PEN",
+                "description": "Soles",
+                "symbol": "S/"
+            },
+            "cover": null
+        },
+        {
+            "id": 2069,
+            "description": "AGENDAS PARA OFICINA",
+            "sale_unit_price": 17,
+            "currency": {
+                "id": "PEN",
+                "description": "Soles",
+                "symbol": "S/"
+            },
+            "cover": null
+        },
+        {
+            "id": 1813,
+            "description": "APARATO TELÉFONICO",
+            "sale_unit_price": 956,
+            "currency": {
+                "id": "PEN",
+                "description": "Soles",
+                "symbol": "S/"
+            },
+            "cover": null
+        },
+        {
+            "id": 755,
+            "description": "080 ADAPTADOR 3 A 2 PLANO L TIERRA 080 EPEM",
+            "sale_unit_price": 2.12,
+            "currency": {
+                "id": "PEN",
+                "description": "Soles",
+                "symbol": "S/"
+            },
+            "cover": {
+                "id": 143,
+                "description": null,
+                "is_cover": true,
+                "path": "http://georfacturacion.test/storage/uploads/variants/Emz6yKCplwC6OwkI4sV9qb32n5vB2PdfWoIN8F3D.png"
+            }
+        }
+    ],
+    "success": true,
+    "message": "Listado de productos marcados como favoritos"
+}, null, 2)}
+	</pre>
+	<br><br>
+	<h5>Agregar producto</h5>
+	<p>
+		<strong>Descripción: </strong>Agrega un producto a la lista de favoritos del usuario logueado, se necesita pasar el ID del producto en la URL para poder realizar la acción
+	</p>
+	<blockquote>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </blockquote>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/favorites/1304/save</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "Producto agregado a la lista de favoritos."
+}, null, 2)}
+	</pre>
+	<br><br>
+	<h5>Eliminar producto</h5>
+	<p>
+		<strong>Descripción: </strong>Elimina un producto de la lista de favoritos del usuario logueado, se necesita pasar el ID del producto en la URL para poder realizar la acción
+	</p>
+	<blockquote>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </blockquote>
+	<p>
+		<strong>URL: </strong>
+		<span>https://pasion.georfacturacion.test/api/v1/ecommerce/favorites/1304/delete</span>
+	</p>
+	<p><strong>Método: </strong>DELETE</p>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "Producto eliminado de la lista de favoritos."
+}, null, 2)}
+	</pre>
+</MainLayout>
