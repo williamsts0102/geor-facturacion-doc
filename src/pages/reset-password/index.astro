@@ -57,6 +57,32 @@ import MainLayout from '../../layouts/MainLayout.astro';
 }, null, 2)}
 	</pre>
 	<br><br>
+
+	<h6>Validar código de verificación</h6>
+	<p>
+		<strong>URL: </strong>
+		<span>http://pasion.georfacturacion.test/api/v1/ecommerce/reset-password/validate-code</span>
+	</p>
+	<p><strong>Método: </strong>POST</p>
+	<p>
+		<strong>Request:</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "email": "demo@gmail.com",
+    "code": "622391",
+}, null, 2)}
+	</pre>
+	<p>
+		<strong>Respuesta</strong>
+	</p>
+	<pre>
+		{ JSON.stringify({
+    "success": true,
+    "message": "El código fue validado de forma correcta."
+}, null, 2)}
+	</pre>
+
 	<h6>Cambiar la contraseña</h6>
 	<p>
 		<strong>URL: </strong>
