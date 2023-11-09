@@ -30,22 +30,26 @@ import MainLayout from '../../layouts/MainLayout.astro';
         {
             "id": 36,
             "name": "Para tí",
-            "slug": "para-ti"
+            "slug": "para-ti",
+            "products_count": 1
         },
         {
             "id": 37,
             "name": "Destacados",
-            "slug": "destacados"
+            "slug": "destacados",
+            "products_count": 1
         },
         {
             "id": 38,
             "name": "Los más vendidos",
-            "slug": "los-mas-vendidos"
+            "slug": "los-mas-vendidos",
+            "products_count": 1
         },
         {
             "id": 39,
             "name": "Los más nuevos",
-            "slug": "los-mas-nuevos"
+            "slug": "los-mas-nuevos",
+            "products_count": 1
         }
     ]
 }, null, 2)}
@@ -223,7 +227,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
                 "unit_type": {
                     "id": "KGM",
                     "description": "Kilos"
-                }
+                },
+                "min_order": "1"
             },
             {
                 "id": 604,
@@ -261,9 +266,11 @@ import MainLayout from '../../layouts/MainLayout.astro';
                 "unit_type": {
                     "id": "KGM",
                     "description": "Kilos"
-                }
+                },
+                "min_order": "1"
             }
-        ]
+        ],
+        "products_count": 1
     }
 }, null, 2)}
 	</pre>
