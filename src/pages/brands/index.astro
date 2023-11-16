@@ -3,7 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Geor Ecommerce - Paises">
-    <h5>Tipo de cambio monetario</h5>
+    <h5>Marcas</h5>
     <hr />
     <p>
         Se requiere autenticación y validación para acceder a estas API.
@@ -25,40 +25,36 @@ import MainLayout from "../../layouts/MainLayout.astro";
         </thead>
         <tbody>
             <tr>
-                <td>id</td>
-                <td>Código ISO de la moneda</td>
+                <td>marca</td>
+                <td>Nombre o descripción de la marca</td>
                 <td>String</td>
                 <td>Si</td>
             </tr>
             <tr>
-                <td>description</td>
-                <td>Nombre de la moneda</td>
+                <td>code</td>
+                <td>Código o abreviatura de la marca</td>
                 <td>String</td>
                 <td>Si</td>
-            </tr>
-            <tr>
-                <td>symbol</td>
-                <td>Simbolo de la moneda</td>
-                <td>String</td>
-                <td>No</td>
             </tr>
             <tr>
                 <td>active</td>
-                <td>Si la moneda esta activa o no</td>
+                <td>Si la marca esta activa o no</td>
                 <td>boleano</td>
                 <td>Si</td>
             </tr>
         </tbody>
     </table>
     <hr />
-    <h6>Listado de tipo de cambio monetario</h6>
+
+    <h6>Listado de Marcas</h6>
+
     <p>
         <strong>Descripción:</strong>Endpoint para ver todo el listado de los
-        tipos de cambio monetario
+        barcas
     </p>
     <p>
         <strong>URL:</strong>
-        <span>http://pasion.georfacturacion.test/api/v1/currency_type</span>
+        <span>http://pasion.georfacturacion.test/api/v1/brands</span>
     </p>
     <p><strong>Método:</strong>GET</p>
     <p>
@@ -74,33 +70,24 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
 		{ JSON.stringify({
             "data": [
-            {
-            "id": "PEN",
-            "description": "Soles",
-            "symbol": "S/",
-            "active": 1
-        },
-        {
-            "id": "USD",
-            "description": "Dólares Americanos",
-            "symbol": "$",
-            "active": 1
-        },
+                {
+                    "id": 1,
+                    "marca": "termianr",
+                    "code": "wert",
+                    "active": 0
+                }
             ],
             "success": true,
-            "message": "Listado de tipo de unidad mostrados de forma correcta."}, null, 2)}
+            "message": "Listado de mostrados de forma correcta."}, null, 2)}
     </pre>
 
-    <h6>Registro de tipo de cambio monetario</h6>
+    <h6>Registro de Marca</h6>
     <p>
-        <strong>Descripción:</strong>Endpoint para registrar los tipos de cambio
-        monetario
+        <strong>Descripción:</strong>Endpoint para registrar marcas
     </p>
     <p>
         <strong>URL:</strong>
-        <span
-            >http://pasion.georfacturacion.test/api/v1/currency_type/register</span
-        >
+        <span>http://pasion.georfacturacion.test/api/v1/brands/register</span>
     </p>
     <p><strong>Método:</strong>POST</p>
 
@@ -110,10 +97,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
     {
     JSON.stringify({
-    "id": "dasEX",
-    "description": "El peso mexicano",
-    "symbol": "$",
-    "active": 1
+    "marca":"hhh",
+    "code":"we",
+    "active":true
     }, null, 2)
     }
     </pre>
@@ -123,24 +109,23 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
         { JSON.stringify({
             "data": {
-                "id": "dasEX",
-                "description": "El peso mexicano",
-                "symbol": "$",
-                "active": 1
+                "id": 2,
+                "marca": "hhh",
+                "code": "we",
+                "active": true
             },
             "success": true,
-            "message": "Exito tipo de cambio monetario creado de forma correcta ."}, null, 2)}
+            "message": "Exito marca creado de forma correcta ."}, null, 2)}
     </pre>
 
-    <h6>Actualizar tipo de cambio monetario</h6>
+    <h6>Actualizar Marca</h6>
     <p>
-        <strong>Descripción:</strong>Endpoint para actualiza el tipo de cambio
-        monetario
+        <strong>Descripción:</strong>Endpoint para actualiza Marcas
     </p>
     <p>
         <strong>URL:</strong>
         <span
-            >http://pasion.georfacturacion.test/api/v1/currency_type/update/[Identificador]</span
+            >http://pasion.georfacturacion.test/api/v1/brands/update/[Identificador]</span
         >
     </p>
     <p><strong>Método:</strong>PUT</p>
@@ -151,9 +136,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
     {
     JSON.stringify({
-    "description": "El sczxczxczxc",
-    "symbol": "$",
-    "active": 1
+    "marca": "termianr",
+    "code": "wert",
+    "active": false
 }, null, 2)
     }
     </pre>
@@ -163,24 +148,23 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
 	{ JSON.stringify({
         "data": {
-            "id": "dasEX",
-            "description": "El sczxczxczxc fdrgggf",
-            "symbol": "$",
-            "active": 1
+            "id": 1,
+            "marca": "termianr",
+            "code": "wert",
+            "active": false
         },
         "success": true,
-        "message": "Tipo de cambio monetario actualizado de forma correcta."}, null, 2)}
+        "message": "Marca actualizado de forma correcta."}, null, 2)}
     </pre>
 
-    <h6>Eliminar tipo de cambio monetario</h6>
+    <h6>Eliminar Marca</h6>
     <p>
-        <strong>Descripción:</strong>Endpoint elimina el tipo de cambio
-        monetario
+        <strong>Descripción:</strong>Endpoint elimina el Marca
     </p>
     <p>
         <strong>URL:</strong>
         <span
-            >http://pasion.georfacturacion.test/api/v1/currency_type/delete/[Identificador]</span
+            >http://pasion.georfacturacion.test/api/v1/brands/delete/[Identificador]</span
         >
     </p>
     <p><strong>Método:</strong>DELETE</p>
@@ -197,7 +181,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <pre>
 	{ JSON.stringify({
    "success": true,
-    "message": "Tipo de unidad eliminado de forma correcta.",
+    "message": "Marca eliminado de forma correcta.",
     }, null, 2)}
     </pre>
 </MainLayout>

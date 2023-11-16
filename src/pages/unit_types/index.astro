@@ -51,54 +51,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
         </tbody>
     </table>
     <hr />
-    <h6>Listado de tipos de unidades de medida por columna de la tabla</h6>
-    <p>
-        <strong>Descripción:</strong>Endpoint para selecionar las columnas
-        deseadas de la tabla
-    </p>
-
-    <p>
-        <strong>URL:</strong>
-        <span
-            >http://pasion.georfacturacion.test/api/v1/unit_types/showfields</span
-        >
-    </p>
-    <p><strong>Método:</strong>GET</p>
-    <p>
-        <strong>Request:</strong>
-    </p>
-    <pre>
-        { JSON.stringify({
-            "fields": [
-                "id",
-                "description",
-                "symbol",
-                "active"
-            ]
-        }, null, 2)}
-    </pre>
-    <p>
-        <strong>Respuesta</strong>
-    </p>
-    <pre>
-		{ JSON.stringify({
-            "data": [
-            {
-            "id": "ZZ",
-            "description": "Servicio",
-            "symbol": null,
-            "active": 1
-        },
-        {
-            "id": "BX",
-            "description": "Caja",
-            "symbol": null,
-            "active": 1
-        },                
-            ],
-            "success": true,
-            "message": "Listado de tipo de unidad mostrados de forma correcta."}, null, 2)}
-    </pre>
 
     <h6>Listado de tipos de unidades de medida</h6>
     <p>
