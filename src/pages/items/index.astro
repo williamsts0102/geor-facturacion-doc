@@ -1,0 +1,385 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Geor Ecommerce - Paises">
+    <h5>Items </h5>
+    <hr />
+    <p>
+        Se requiere autenticación y validación para acceder a estas API.
+        Asegúrese de proporcionar las credenciales adecuadas.
+    </p>
+    <hr />
+    <p>
+        <strong>Tabla de referencias</strong>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Columna</th>
+                <th>Descripción</th>
+                <th>Tipo de dato</th>
+                <th>Requerido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>Nombre del item</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>Descripción del item</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>category_id</td>
+                <td>Código de la categoria del item</td>
+                <td>Number</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>image</td>
+                <td>Nombre de la imagen con su formato .jpg o .png</td>
+                <td>String</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>temp_path</td>
+                <td>Imagen del item</td>
+                <td>String</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>currency_type_id</td>
+                <td>Código del tipo de moneda del precio de venta del item</td>
+                <td>String</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>sale_unit_price</td>
+                <td>Precio de venta unitario</td>
+                <td>Decimal</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>offer_price</td>
+                <td>Precio de oferta</td>
+                <td>Decimal</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>unit_type_id</td>
+                <td>Código del tipo de unidad del item</td>
+                <td>Number</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>has_igv</td>
+                <td>Si el igv esta activo para el item</td>
+                <td>Boolean</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>barcode</td>
+                <td>Código de barras</td>
+                <td>String</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>internal_id</td>
+                <td>Código de referencia</td>
+                <td>String</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>items_warehouse</td>
+                <td>Lista de los establecimientos que con el stock inicial del item</td>
+                <td>Array</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>items_warehouse.stock</td>
+                <td>Cantidad de items iniciales en el establecimiento</td>
+                <td>Double</td>
+                <td>Si</td>
+            </tr>
+            <tr>
+                <td>items_warehouse.warehouse_id</td>
+                <td>Código del establecimiento</td>
+                <td>Number</td>
+                <td>Si</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+
+    <h6>Listado de Items</h6>
+
+    <p>
+        <strong>Descripción:</strong>Endpoint para ver todo el listado de los
+        items
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span>http://pasion.georfacturacion.test/api/v1/items</span>
+    </p>
+    <p><strong>Método:</strong>GET</p>
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+        No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+
+    <pre>
+		{ JSON.stringify(    
+        {
+            "data": [
+                {
+                    "id": 1,
+                    "description": "prueba",
+                    "internal_id": "1",
+                    "sale_unit_price": 1,
+                    "unit_type_id": "NIU",
+                    "unit_type": {
+                        "id": "NIU",
+                        "description": "Unidades"
+                    },
+                    "currency_type_id": "USD",
+                    "image": "http://georfacturacion.test/storage/uploads/items/prueba-20230927122208.png",
+                    "currency_type": {
+                        "id": "USD",
+                        "description": "Dólares Americanos",
+                        "symbol": "$"
+                    },
+                    "category_id": 1,
+                    "has_igv": false,
+                    "category": {
+                        "id": 1,
+                        "name": "Para tí",
+                        "code": "PARATI"
+                    },
+                    "stock": 0
+                },
+                {
+                    "id": 5,
+                    "description": "asdasdfsdgfsdgsdgsdf",
+                    "internal_id": null,
+                    "sale_unit_price": 1,
+                    "unit_type_id": "BX",
+                    "unit_type": {
+                        "id": "BX",
+                        "description": "Cajas"
+                    },
+                    "currency_type_id": "USD",
+                    "image": "https://wts.georfacturacion.test/logo/imagen-no-disponible.jpg",
+                    "currency_type": {
+                        "id": "USD",
+                        "description": "Dólares Americanos",
+                        "symbol": "$"
+                    },
+                    "category_id": 1,
+                    "has_igv": true,
+                    "category": {
+                        "id": 1,
+                        "name": "Para tí",
+                        "code": "PARATI"
+                    },
+                    "stock": 0
+                }
+            ],
+            "links": {
+                "first": "https://wts.georfacturacion.test/api/v1/items?page=1",
+                "last": "https://wts.georfacturacion.test/api/v1/items?page=2",
+                "prev": null,
+                "next": null
+            },
+            "meta": {
+                "current_page": 1,
+                "from": 1,
+                "last_page": 1,
+                "path": "https://wts.georfacturacion.test/api/v1/items",
+                "per_page": 20,
+                "to": 20,
+                "total": 2
+            }
+        }, null, 2)}
+    </pre>
+
+    <h6>Show Item</h6>
+
+    <p>
+        <strong>Descripción:</strong>Endpoint para ver un 
+        item en específico. 
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span>http://pasion.georfacturacion.test/api/v1/items/[Identificador]/show</span>
+    </p>
+    <p><strong>Método:</strong>GET</p>
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+        No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+
+    <pre>
+		{ JSON.stringify(    
+        {
+           "data": {
+                "id": 35,
+                "description": "ffffffffffffff",
+                "internal_id": "FGBV05SAD",
+                "sale_unit_price": 188.35,
+                "unit_type_id": "KGM",
+                "unit_type": {
+                    "id": "KGM",
+                    "description": "Kilos"
+                },
+                "currency_type_id": "PEN",
+                "image": "http://georfacturacion.test/storage/uploads/items/ffffffffffffff-20231117123930.jpg",
+                "currency_type": {
+                    "id": "PEN",
+                    "description": "Soles",
+                    "symbol": "S/"
+                },
+                "category_id": 2,
+                "has_igv": false,
+                "stock": "20.0000"
+            }
+        }, null, 2)}
+    </pre>
+
+    <h6>Registro de Item</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para registrar los items
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/items/store</span
+        >
+    </p>
+    <p><strong>Método:</strong>POST</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify({
+        "name": "prueba",
+        "description": "asdasda",
+        "category_id": 1,
+        "image": "nueva_imagen.jpg",
+        "temp_path": "imagen en base64",
+        "currency_type_id": "USD",
+        "sale_unit_price": 20,
+        "offer_price": 18,
+        "unit_type_id": "NIU",
+        "has_igv": 1,
+        "barcode": "5/901234/123457",
+        "internal_id": "ZG011AQA",
+        "items_warehouse": [
+            {
+                "stock": 100,
+                "warehouse_id": 1
+            }
+        ]
+    }, null, 2)
+    }
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+        { JSON.stringify({
+            "success": true,
+            "id": 1,
+            "message": "Producto registrado con éxito"}, null, 2)}
+    </pre>
+
+    <h6>Actualizar Item</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para actualizar items
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/items/store</span
+        >
+    </p>
+    <p><strong>Método:</strong>Post</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    {
+    JSON.stringify({
+        "id": 35,
+        "name": "prueba",
+        "description": "asdasda",
+        "category_id": 1,
+        "image": "nueva_imagen.jpg",
+        "temp_path": "imagen en base64",
+        "currency_type_id": "USD",
+        "sale_unit_price": 20,
+        "offer_price": 18,
+        "unit_type_id": "NIU",
+        "has_igv": 1,
+        "barcode": "5/901234/123457",
+        "internal_id": "ZG011AQA"
+    }, null, 2)
+    }
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+	{ JSON.stringify({
+        "success": true,
+        "id": 35,
+        "message": "Producto editado con éxito"}, null, 2)}
+    </pre>
+
+    <h6>Eliminar Item</h6>
+    <p>
+        <strong>Descripción:</strong>Endpoint para eliminar el item
+    </p>
+    <p>
+        <strong>URL:</strong>
+        <span
+            >http://pasion.georfacturacion.test/api/v1/items/[Identificador]/delete</span
+        >
+    </p>
+    <p><strong>Método:</strong>DELETE</p>
+
+    <p>
+        <strong>Request:</strong>
+    </p>
+    <pre>
+    No se requieren parámetros adicionales para esta solicitud.
+    </pre>
+    <p>
+        <strong>Respuesta</strong>
+    </p>
+    <pre>
+	{ JSON.stringify({
+    "success": true,
+    "message": "Producto eliminado con éxito"
+    }, null, 2)}
+    </pre>
+</MainLayout>
