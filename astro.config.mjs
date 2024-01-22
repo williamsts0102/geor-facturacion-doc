@@ -11,5 +11,5 @@ export default defineConfig({
   outDir: 'dist',
   publicDir: 'public',
   output: 'static',
-    base: '/geor-basic-docs',
+    base: '/geor-facturacion-docs',
 });
